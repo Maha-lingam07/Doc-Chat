@@ -142,3 +142,6 @@ DocChat/
 ├── requirements.txt        # Python dependencies
 └── README.md               # Setup and usage guide
 ```
+## ScreenShot of the UI
+
+<img width="1919" height="908" alt="SS" src="https://github.com/user-attachments/assets/1ce15a04-b7ff-43de-a923-dfd98e942426" />
