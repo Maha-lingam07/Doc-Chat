@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Chat with your PDFs using Doc-Chat.">
+  <title>Doc-Chat</title>
+  <link rel="icon" type="image/png" href="/static/doc-chat-brand.jpg">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Doc-Chat home">
+        <span class="brand-mark"><img src="/static/doc-chat-brand.jpg" alt=""></span>
+        <span class="brand-copy"><small>Chat with your PDFs</small></span>
+      </a>
+    </header>
+
+    <section class="workspace">
+      <section class="conversation" id="conversation" aria-label="Conversation" aria-live="polite">
+        <div class="welcome" id="welcome">
+          <span class="welcome-icon" aria-hidden="true">✦</span>
+          <h1>Your answers start here</h1>
+          <p>Open an index or upload a PDF, then ask a question.</p>
+        </div>
+        <div class="messages" id="messages"></div>
+      </section>
+
+      <aside class="index-panel" aria-label="PDF upload and index controls">
+        <div class="panel-heading"><h2>Documents</h2><p>Add a PDF or open an index.</p></div>
+        <input id="fileInput" type="file" accept="application/pdf,.pdf" hidden>
+        <label class="upload-button" for="fileInput">
+          <span class="upload-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14.5v4A1.5 1.5 0 0 0 6.5 20h11a1.5 1.5 0 0 0 1.5-1.5v-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span><strong>Upload PDF</strong><small>Choose a file from your device</small></span>
+        </label>
+        <div class="panel-divider"></div>
+        <label class="index-label" for="indexName">Pinecone index name</label>
+        <input id="indexName" type="text" maxlength="45" placeholder="index-name" autocomplete="off" spellcheck="false">
+        <button id="openIndex" type="button" class="open-button">Open index</button>
+        <p class="index-help" id="indexStatus">Choose a PDF to create a new index, or open an existing one.</p>
+      </aside>
+    </section>
+
+    <footer class="chat-area">
+      <form id="chatForm" class="chat-form">
+        <textarea id="question" rows="1" maxlength="4000" placeholder="Type a message…" aria-label="Your message" disabled></textarea>
+        <button id="send" type="submit" aria-label="Send message" disabled><span aria-hidden="true">➤</span></button>
+      </form>
+    </footer>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>

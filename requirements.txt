@@ -1,0 +1,9 @@
+fastapi>=0.115,<1
+uvicorn[standard]>=0.30,<1
+python-multipart>=0.0.9
+python-dotenv>=1.0
+pypdf>=5.0
+sentence-transformers>=3.0
+torch-directml==0.2.5.dev240914; platform_system == "Windows"
+pinecone>=6.0
+google-genai>=1.0
